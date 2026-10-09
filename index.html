@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姿势识别游戏</title>
+    <link rel="stylesheet" href="public/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="game-container">
+        <div id="game-area"></div>
+    </div>
+    <div id="pose-container">
+        <video id="input-video" playsinline autoplay muted></video>
+        <canvas id="pose-canvas"></canvas>
+    </div>
+    <!-- 音频资源 -->
+    <audio id="starSound" src="public/Assets/sound/star.mp3"></audio>
+    <audio id="balloonSound" src="public/Assets/sound/balloon.mp3"></audio>
+    <audio id="catchSound" src="public/Assets/sound/kaching.ogg"></audio>
+    <audio id="slapSound" src="public/Assets/sound/slap.ogg"></audio>
+    <audio id="screamingSound" src="public/Assets/sound/screaming.ogg"></audio>
+    <audio id="gameplayMusic" src="public/Assets/sound/Komiku_-_12_-_Bicycle.ogg"></audio>
+    <audio id="menuMusic" src="public/Assets/sound/music.ogg"></audio>
+
+    <!-- 游戏脚本 -->
+    <script src="public/settings.js"></script>
+    <script src="public/gameObject.js"></script>
+    <script src="public/poseDetection.js"></script>
+    <script src="public/projectile.js"></script>
+    <script src="public/ships.js"></script>
+    <script src="public/player.js"></script>
+    <script src="public/difficulty.js"></script>
+    <script src="public/background.js"></script>
+    <script src="public/menu.js"></script>
+    <script src="public/game.js"></script>
+    <script src="public/script.js"></script>
+</body>
+</html> 

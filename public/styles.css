@@ -1,0 +1,209 @@
+/* 全局样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: transparent !important;
+}
+
+/* 背景 */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Assets/avatar/Space_Banner-3824627733.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* 游戏容器和区域 */
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: transparent !important;
+}
+
+#game-area {
+    background-color: transparent !important;
+}
+
+#game-area > * {
+    pointer-events: auto;
+}
+
+/* 调整姿势识别容器的位置 */
+#pose-container {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 320px;
+    height: 240px;
+    z-index: 1000;
+    overflow: hidden;
+}
+#input-video, #pose-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#pose-canvas {
+    z-index: 2;
+}
+
+/* 玩家样式 */
+#player {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#player img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 游戏对象样式 */
+.projectile, .ship, .player {
+    position: absolute;
+    /* width: 40px;
+    height: 40px; */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.projectile {
+    background-image: url('./Assets/star/pellet.png');
+}
+
+.player {
+    background-image: url('./Assets/avatar/gun.png');
+}
+
+.ship {
+    background-image: url('./Assets/balloon/ship.png');
+}
+
+.ship.burst {
+    background-image: url('./Assets/balloon/pink_burst.png');
+}
+.ship.inv {
+    background-image: url('./Assets/balloon/inv.png');
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+.hud-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* 难度选择屏幕 */
+#difficulty-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#difficulty-screen h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#difficulty-screen button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#difficulty-screen button:hover {
+    background-color: #45a049;
+}
+
+#difficulty-screen input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+/* 菜单样式 */
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+#menu h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #45a049;
+}
+
+/* 确保所有按钮在最上层 */
+button {
+    z-index: 1000;
+}
